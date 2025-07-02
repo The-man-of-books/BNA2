@@ -1,0 +1,70 @@
+<!-- enquire.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle Enquiry</title>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Enquire About This Vehicle</h2>
+
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <label for="car">Vehicle:</label>
+    <input type="text" name="Vehicle" id="car" readonly required>
+
+    <label for="name">Your Name:</label>
+    <input type="text" name="Name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" name="Email" required>
+
+    <label for="message">Your Message:</label>
+    <textarea name="Message" rows="5" placeholder="I am interested in this vehicle..."></textarea>
+
+    <button type="submit">Send Enquiry</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const carName = params.get('car');
+    if (carName) {
+      document.getElementById('car').value = decodeURIComponent(carName);
+    }
+  </script>
+
+
+</body>
+</html>
+
