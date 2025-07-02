@@ -35,25 +35,28 @@
 
 
 </header>
-<section class="carousel">
+<body>
+  <section class="carousel">
   <div class="carousel-container">
     <ul class="carousel-track">
+      <!-- Slide 1: Video Banner -->
       <li class="carousel-slide">
-        <img src="images/BNA9610-1.jpeg" alt="Car 1" />
+        <video autoplay muted loop playsinline class="carousel-video">
+          <source src="video/1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </li>
+
+      <!-- Slide 2: Image Banner -->
       <li class="carousel-slide">
-        <img src="images/BNA9544-1.jpeg" alt="Car 2" />
-      </li>
-      <li class="carousel-slide">
-        <img src="images/BNA9382-5.jpeg" alt="Car 3" />
+        <img src="images/3.jpg" alt="Car 1" />
       </li>
     </ul>
   </div>
-  
+
   <button class="carousel-button carousel-button-left">&#10094;</button>
   <button class="carousel-button carousel-button-right">&#10095;</button>
 </section>
-<body>
 <section class="hero-message">
   <div class="hero-text">
     <h1>WELCOME TO BNA MOTORS</h1>
@@ -309,7 +312,7 @@
     <ul>
       <li><strong>Tel:</strong> 073 469 7077 / 081 595 3914</li>
       <li><strong>Website:</strong> <a href="http://www.bnamotors.co.za" target="_blank">www.bnamotors.co.za</a></li>
-      <li><strong>Email:</strong> <a href="mailto:andy@bnamotors.co.za">andy@bnamotors.co.za</a> / <a href="mailto:shane@bnamotors.co.za">shane@bnamotors.co.za</a></li>
+      <li><strong>Email:</strong> <a href="mailto:bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
       <li><strong>Address:</strong> 255 Voortrekker Road, Goodwood; 374 Voortrekker Road, Parow; 402 Voortrekker Road, Parow, Cape Town, 7500</li>
       <li><strong>Postal:</strong> 402 Voortrekker Road, Parow, Cape Town, 7500</li>
     </ul>
@@ -364,51 +367,26 @@
       <li>
         <strong>374 Voortrekker Road</strong><br>
         Address: 374 Voortrekker Road, Parow, Cape Town, 7501<br>
-        Contact: 073 469 7077
+        Contact: 087 510 0928
       </li>
       <li>
         <strong>403 Voortrekker Road</strong><br>
         Address: 403 Voortrekker Road, Parow, Cape Town, 7500<br>
-        Contact: 073 469 7077
+        Contact: 087 510 0928
       </li>
       <li>
         <strong>255 Voortrekker Road</strong><br>
         Address: 255 Voortrekker Road, Goodwood, Cape Town, 7460<br>
-        Contact: 073 469 7077
+        Contact: 087 510 0928
       </li>
     </ul>
   </div>
 
   <h3>Sales Department Contacts</h3>
   <ul>
-    <li><strong>Rushion Saralina (Sales Manager)</strong><br>Tel: 073 469 7077 | Cell: 078 813 1511 | Email: <a href="mailto:bnamotors.rushion@gmail.com">bnamotors.rushion@gmail.com</a></li>
-    <li><strong>Marthernic Swartz (Sales Executive)</strong><br>Tel: 073 469 7077 | Cell: 060 492 5793 | Email: <a href="mailto:mswartz@bnamotors.co.za">mswartz@bnamotors.co.za</a></li>
-  </ul>
+    <li><strong>Rushion Saralina (Sales Executive)</strong><br>Tel: 087 510 0928 | Cell: 078 335 0897 | Email: <a href="mailto:bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
+    </ul>
 </section>
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="images/BNA9122-11.jpeg" alt="BNA Motors" />
-    </div>
-    <div class="footer-info">
-      <ul>
-        <li><strong>Contact:</strong> 073 469 7077 / 081 595 3914</li>
-        <li><strong>Email:</strong> <a href="mailto:andy@bnamotors.co.za">andy@bnamotors.co.za</a> / <a href="mailto:shane@bnamotors.co.za">shane@bnamotors.co.za</a></li>
-        <li><strong>Address:</strong> 255 Voortrekker Road, Goodwood; 374 Voortrekker Road, Parow; 402 Voortrekker Road, Parow, Cape Town, 7500</li>
-        <li><strong>Website:</strong> <a href="http://www.bnamotors.co.za" target="_blank">www.bnamotors.co.za</a></li>
-      </ul>
-    </div>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/BNA-Motors" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/bnamotors" target="_blank">Instagram</a> |
-      <a href="https://twitter.com/bnamotors" target="_blank">Twitter</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 BNA Motors. All Rights Reserved.</p>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 
@@ -416,68 +394,32 @@
 <div id="bankRepoGrid" class="vehicle-grid"></div>
 <p id="statusMsg" style="text-align:center;color:orange;"></p>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("bankRepoGrid");
-  const status = document.getElementById("statusMsg");
-
-  fetch('bank-repo-cars.json')
-    .then(res => {
-      if (!res.ok) throw new Error("JSON file not found");
-      return res.json();
-    })
-    .then(cars => {
-      if (!Array.isArray(cars)) throw new Error("Invalid JSON format");
-      if (cars.length === 0) {
-        status.textContent = "No repossessed cars listed yet.";
-        return;
-      }
-
-      cars.forEach(car => {
-        const card = `
-          <div class="vehicle-card">
-            <img src="${car.image}" alt="${car.title}" />
-            <div class="vehicle-info">
-              <h3>${car.title}</h3>
-              <p>${car.desc}</p>
-              <p class="price">${car.price}</p>
-              <button class="enquire-btn">ENQUIRE</button>
-            </div>
-          </div>
-        `;
-        grid.innerHTML += card;
-      });
-
-      status.textContent = "✔ Cars loaded";
-    })
-    .catch(err => {
-      status.textContent = `❌ Failed: ${err.message}`;
-      console.error(err);
-    });
-});
-</script>
-
-<!-- jQuery + Slick Carousel JS -->
+<!-- jQuery + Slick Carousel (Keep only if you're using Slick elsewhere) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("carGrid");
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("bankRepoGrid");
   const pagination = document.getElementById("pagination");
   const carsPerPage = 6;
   let currentPage = 1;
   let allCars = [];
 
   fetch('bank-repo-cars.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to fetch cars.");
+      return res.json();
+    })
     .then(data => {
+      if (!Array.isArray(data)) throw new Error("Invalid JSON structure.");
       allCars = data;
       renderPage(currentPage);
       renderPagination();
+      attachEnquireHandlers();
     })
     .catch(err => {
-      grid.innerHTML = "<p style='color:red;'>❌ Failed to load cars.</p>";
+      grid.innerHTML = `<p style="color:red;">❌ Failed to load cars: ${err.message}</p>`;
       console.error(err);
     });
 
@@ -501,6 +443,8 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       grid.appendChild(card);
     });
+
+    attachEnquireHandlers(); // re-bind after rendering
   }
 
   function renderPagination() {
@@ -519,7 +463,6 @@ document.addEventListener("DOMContentLoaded", () => {
       pagination.appendChild(btn);
     }
 
-    // Add next button
     if (currentPage < totalPages) {
       const nextBtn = document.createElement('button');
       nextBtn.textContent = 'Next';
@@ -531,9 +474,45 @@ document.addEventListener("DOMContentLoaded", () => {
       pagination.appendChild(nextBtn);
     }
   }
-});
 
+  function attachEnquireHandlers() {
+    document.querySelectorAll('.enquire-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.vehicle-card');
+        const title = card.querySelector('h3').textContent;
+        // Formspree version (recommended)
+        window.location.href = `enquire.html?vehicle=${encodeURIComponent(title)}`;
+        // Or open mail client:
+        // window.location.href = `mailto:andy@bnamotors.co.za?subject=Enquiry about ${encodeURIComponent(title)}&body=Hi, I'm interested in the ${encodeURIComponent(title)}. Please send more info.`;
+      });
+    });
+  }
+});
 </script>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/BNA_FOOTER_LOGO_V1.png" alt="BNA Motors" />
+    </div>
+    <div class="footer-info">
+      <ul>
+        <li><strong>Contact:</strong> 078 335 0897 / 087 510 0928</li>
+        <li><strong>Email:</strong> <a href="mailto: bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
+        <li><strong>Address:</strong> 255 Voortrekker Road, Goodwood; 374 Voortrekker Road, Parow; 402 Voortrekker Road, Parow, Cape Town, 7500</li>
+        <li><strong>Website:</strong> <a href="http://www.bnamotors.co.za" target="_blank">www.bnamotors.co.za</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/share/1Nx6f48hyD/" target="_blank">Facebook</a> |
+      <a href="#" target="_blank">Instagram</a> |
+      <a href="#" target="_blank">Twitter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 BNA Motors. All Rights Reserved.<a href="#"> Designed By Marketing ACE</a></p>
+  </div>
+</footer>
 
 <form id="enquiryForm" action="https://formspree.io/f/your_form_id" method="POST" style="display: none;">
   <input type="hidden" name="vehicle" id="vehicleName">

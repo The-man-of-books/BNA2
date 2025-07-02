@@ -70,7 +70,7 @@
 .carousel {
   position: relative;
   width: 100%;
-  max-height: 600px;
+  max-height: 800px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -99,7 +99,7 @@
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
 }
@@ -912,4 +912,33 @@ body {
 
 .pagination button.active {
   background: #0056b3;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: center;
+  position: relative;
+}
+
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* Keeps it on top of everything */
+  background: #ffffff; /* Or transparent if using overlays */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds subtle depth */
+}
+
+body {
+  padding-top: 80px; /* Match header height */
 }

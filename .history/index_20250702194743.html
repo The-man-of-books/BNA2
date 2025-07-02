@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BNA Motors</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Slick Carousel CSS -->
+ 
+</head>
+
+<header class="bna-header">
+  <!-- Top Logo Row -->
+  <a href="#" class="logo">
+
+      <img src="images/OPT_2.png" alt="BNA Motors Logo" />
+    </a>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#vehicle-listings">PRE-OWNED</a></li>
+      <li><a href="#sell-my-car">SELL MY CAR</a></li>
+      <li><a href="#finance-application">FINANCE</a></li>
+      <li><a href="#contact-us">CONTACT</a></li>
+      <li><a href="#bank-repo">BANK REPOSSESSED CARS</a></li>
+      <li>
+        <a href="https://wa.me/27783350897?text=Website%20Inquiry%20-%20Please%20Contact%20Me" target="_blank">
+          WHATSAPP <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+</header>
+<section class="carousel">
+  <div class="carousel-container">
+    <ul class="carousel-track">
+      <li class="carousel-slide">
+        <img src="images/BNA9610-1.jpeg" alt="Car 1" />
+      </li>
+      <li class="carousel-slide">
+        <img src="images/BNA9544-1.jpeg" alt="Car 2" />
+      </li>
+      <li class="carousel-slide">
+        <img src="images/BNA9382-5.jpeg" alt="Car 3" />
+      </li>
+    </ul>
+  </div>
+  
+  <button class="carousel-button carousel-button-left">&#10094;</button>
+  <button class="carousel-button carousel-button-right">&#10095;</button>
+</section>
+<body>
+<section class="hero-message">
+  <div class="hero-text">
+    <h1>WELCOME TO BNA MOTORS</h1>
+    <div class="underline"></div>
+    <p>QUALITY PRE-OWNED VEHICLES IN THE WESTERN CAPE</p>
+  </div>
+
+  <div class="hero-actions">
+    <button class="compare-btn">COMPARE SELECTED VEHICLES</button>
+  </div>
+
+</section> 
+
+<section id="vehicle-listings" class="vehicle-listings">
+  <h2 style="color: white; text-align: center; margin-bottom: 30px;">Available Vehicles</h2>
+
+  <div id="mainCarGrid" class="vehicle-grid"></div>
+
+  <div id="mainCarPagination" class="pagination"></div>
+
+  <p id="mainCarStatus" style="color: #ffff00; text-align: center;"></p>
+</section>
+
+
+
+<section id="bank-repo" class="vehicle-listings">
+  <div class="container">
+    <h2 style="color: white; text-align: center; margin-bottom: 30px;">Bank Repossessed Cars</h2>
+
+    <div id="bankRepoGrid" class="vehicle-grid"></div>
+
+    <div id="pagination" class="pagination"></div>
+  </div>
+  <p id="jsonStatus" style="color: #ffff00; text-align: center;"></p>
+</section>
+
+
+<section id="sell-my-car" class="sell-my-car-section">
+  <h2>Sell My Car</h2>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="sell-my-car-form">
+    <div class="form-row">
+      <input type="text" name="title" placeholder="Title*" required>
+      <input type="text" name="name" placeholder="Name*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="surname" placeholder="Surname*" required>
+      <input type="email" name="email" placeholder="Email Address*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="contact" placeholder="Contact Number*" required>
+      <input type="text" name="suburb" placeholder="Suburb*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="province" placeholder="Province*" required>
+      <input type="text" name="year" placeholder="Year Manufactured*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="make" placeholder="Make*" required>
+      <input type="text" name="model" placeholder="Model*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="derivative" placeholder="Derivative*" required>
+      <input type="text" name="odometer" placeholder="Odometer Reading (KM)*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="date" placeholder="Date Registered*" required>
+      <input type="text" name="condition" placeholder="Vehicle Condition*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="damage" placeholder="Damage or mechanical issues?" required>
+    </div>
+    <div class="form-row">
+      <textarea name="comment" placeholder="Additional Comments (optional)"></textarea>
+    </div>
+    <div class="form-row checkbox-row">
+      <label>
+        <input type="checkbox" required>
+        I consent to being contacted about this request.
+      </label>
+    </div>
+    <div class="form-row">
+      <button type="submit">SUBMIT</button>
+    </div>
+  </form>
+</section>
+
+<section id="finance-application" class="finance-form-section">
+  <h2>Finance Application</h2>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="finance-form">
+    <!-- VEHICLE -->
+    <div class="form-row">
+      <label>Which Vehicle (e.g. 2010 2.0)</label>
+      <input type="text" name="vehicle_description" required>
+    </div>
+
+    <!-- PERSONAL DETAILS -->
+    <h3>Personal Details</h3>
+    <div class="form-row">
+      <select name="title" required>
+        <option value="">- Select -</option>
+        <option>Mr</option><option>Ms</option><option>Mrs</option>
+      </select>
+      <input type="text" name="surname" placeholder="Surname*" required>
+      <input type="text" name="full_names" placeholder="Full Names*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="cell" placeholder="Cell Number*" required>
+      <input type="email" name="email" placeholder="Email Address*" required>
+      <input type="text" name="sex" placeholder="Sex*" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="id_number" placeholder="ID Number*" required>
+      <input type="number" name="dependants" placeholder="No. of Dependants*" required>
+    </div>
+    <div class="form-row">
+      <select name="marital_status">
+        <option value="">Not Selected</option>
+        <option>Single</option><option>Married</option><option>Divorced</option>
+      </select>
+      <select name="marital_contract">
+        <option value="">Not Selected</option>
+        <option>In community</option><option>Out of community</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <input type="text" name="marriage_day" placeholder="Marriage Day (dd)">
+      <input type="text" name="marriage_month" placeholder="Marriage Month (mm)">
+      <input type="text" name="marriage_year" placeholder="Marriage Year (yyyy)">
+    </div>
+
+    <!-- HOME ADDRESS -->
+    <h3>Home Address</h3>
+    <div class="form-row">
+      <input type="text" name="street1" placeholder="Street 1">
+      <input type="text" name="street2" placeholder="Street 2">
+      <input type="text" name="street3" placeholder="Street 3">
+    </div>
+    <div class="form-row">
+      <input type="text" name="suburb" placeholder="Suburb">
+      <input type="text" name="city" placeholder="City">
+      <input type="text" name="postal_code" placeholder="Postal Code">
+    </div>
+    <div class="form-row">
+      <input type="text" name="duration_at_address" placeholder="How long have you stayed? (Years/Months)">
+    </div>
+
+    <!-- POSTAL ADDRESS -->
+    <h3>Postal Address</h3>
+    <div class="form-row">
+      <input type="text" name="po_box1" placeholder="P.O. Box 1">
+      <input type="text" name="po_box2" placeholder="P.O. Box 2">
+      <input type="text" name="po_box3" placeholder="P.O. Box 3">
+    </div>
+    <div class="form-row">
+      <input type="text" name="po_suburb" placeholder="P.O. Box Suburb">
+      <input type="text" name="po_city" placeholder="P.O. Box City">
+      <input type="text" name="po_postal_code" placeholder="P.O. Box Postal Code">
+    </div>
+
+    <!-- CONTACTS -->
+    <div class="form-row">
+      <input type="text" name="tel_home" placeholder="Telephone (Home)">
+      <input type="text" name="tel_work" placeholder="Telephone (Work)">
+    </div>
+    <div class="form-row">
+      <input type="text" name="spouse_name" placeholder="Spouse Name (if married)">
+      <input type="text" name="spouse_id" placeholder="Spouse ID">
+      <input type="text" name="spouse_cell" placeholder="Spouse Cell">
+    </div>
+
+    <!-- REFERENCE -->
+    <h3>Reference (Not living with you)</h3>
+    <div class="form-row">
+      <input type="text" name="ref_name" placeholder="Name">
+      <input type="text" name="ref_surname" placeholder="Surname">
+      <input type="text" name="ref_cell" placeholder="Cell Number">
+      <input type="text" name="ref_relationship" placeholder="Relationship">
+    </div>
+    <div class="form-row">
+      <input type="text" name="ref_address" placeholder="Address">
+    </div>
+
+    <!-- EMPLOYMENT -->
+    <h3>Employer Details</h3>
+    <div class="form-row">
+      <input type="text" name="employer" placeholder="Company Name">
+      <input type="text" name="manager" placeholder="Manager's Name">
+      <select name="occupation">
+        <option value="">Occupation</option>
+        <option>Clerk</option><option>Supervisor</option><option>Other</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <input type="text" name="work_duration" placeholder="Time at Job (Years/Months)">
+      <input type="text" name="employer_address" placeholder="Employer Address">
+      <input type="text" name="employer_tel" placeholder="Employer Telephone">
+    </div>
+    <div class="form-row">
+      <input type="text" name="pay_date" placeholder="When do you get paid?">
+    </div>
+
+    <!-- BANKING -->
+    <h3>Banking Details</h3>
+    <div class="form-row">
+      <select name="bank">
+        <option value="">Who do you bank with?</option>
+        <option>ABSA</option><option>FNB</option><option>Standard Bank</option>
+      </select>
+      <select name="account_type">
+        <option value="">Type of Account</option>
+        <option>Cheque</option><option>Savings</option><option>Credit</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <input type="text" name="branch_name" placeholder="Bank Branch Name">
+      <input type="text" name="account_number" placeholder="Account Number">
+      <input type="text" name="branch_number" placeholder="Branch Code">
+    </div>
+    <div class="form-row">
+      <input type="text" name="account_holder" placeholder="Name of Account Holder">
+    </div>
+
+    <!-- INCOME & EXPENSES -->
+    <h3>Income and Expenses</h3>
+    <div class="form-row">
+      <input type="text" name="income_before" placeholder="Income Before Deductions">
+      <input type="text" name="income_after" placeholder="Income After Deductions">
+      <input type="text" name="expenses_total" placeholder="Total Expenses (Rent, Food, etc)">
+    </div>
+    <div class="form-row">
+      <textarea name="expenses_breakdown" placeholder="Breakdown: Bond, Water, Transport, Loans, Credit Cards, Food, Clothing, Insurance, etc" rows="5"></textarea>
+    </div>
+
+    <!-- AGREEMENT -->
+    <div class="form-row agreement">
+      <label>
+        <input type="checkbox" required>
+        I hereby consent to a credit check and declare all info provided is true and correct.
+      </label>
+    </div>
+
+    <div class="form-row">
+      <button type="submit">SUBMIT</button>
+    </div>
+  </form>
+</section>
+
+<section id="contact-us" class="contact-form-section">
+  <h2>Contact Us</h2>
+
+  <div class="contact-info">
+    <h3>Contact Details</h3>
+    <ul>
+      <li><strong>Tel:</strong> 073 469 7077 / 081 595 3914</li>
+      <li><strong>Website:</strong> <a href="http://www.bnamotors.co.za" target="_blank">www.bnamotors.co.za</a></li>
+      <li><strong>Email:</strong> <a href="mailto:bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
+      <li><strong>Address:</strong> 255 Voortrekker Road, Goodwood; 374 Voortrekker Road, Parow; 402 Voortrekker Road, Parow, Cape Town, 7500</li>
+      <li><strong>Postal:</strong> 402 Voortrekker Road, Parow, Cape Town, 7500</li>
+    </ul>
+
+    <h3>Business Hours</h3>
+    <ul>
+      <li><strong>Vehicle and Parts Sales:</strong> Monday to Friday - 08:00 to 18:00</li>
+      <li><strong>Saturdays:</strong> 08:00 to 14:00</li>
+      <li><strong>Public Holidays:</strong> 08:00 to 14:00</li>
+      <li><strong>Sundays:</strong> Closed</li>
+    </ul>
+  </div>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+    <h3>Contact Form</h3>
+
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Name*" required>
+      <input type="text" name="surname" placeholder="Surname*" required>
+    </div>
+    <div class="form-row">
+      <input type="tel" name="telephone" placeholder="Telephone*" required>
+      <input type="email" name="email" placeholder="Email*" required>
+    </div>
+    <div class="form-row">
+      <textarea name="comments" placeholder="Comments*" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="contact-method">Preferred Contact Method:</label>
+      <select name="preferred_contact_method" id="contact-method">
+        <option value="phone">Phone (call)</option>
+        <option value="email">Email</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>
+        <input type="checkbox" name="consent" required>
+        I hereby give my consent to all related parties for the collection and use of this information.
+      </label>
+    </div>
+
+    <div class="form-row">
+      <button type="submit">SUBMIT</button>
+    </div>
+  </form>
+
+  <h3>Branch Details</h3>
+  <div class="branch-details">
+    <ul>
+      <li>
+        <strong>374 Voortrekker Road</strong><br>
+        Address: 374 Voortrekker Road, Parow, Cape Town, 7501<br>
+        Contact: 087 510 0928
+      </li>
+      <li>
+        <strong>403 Voortrekker Road</strong><br>
+        Address: 403 Voortrekker Road, Parow, Cape Town, 7500<br>
+        Contact: 087 510 0928
+      </li>
+      <li>
+        <strong>255 Voortrekker Road</strong><br>
+        Address: 255 Voortrekker Road, Goodwood, Cape Town, 7460<br>
+        Contact: 087 510 0928
+      </li>
+    </ul>
+  </div>
+
+  <h3>Sales Department Contacts</h3>
+  <ul>
+    <li><strong>Rushion Saralina (Sales Manager)</strong><br>Tel: 087 510 0928 | Cell: 078 335 0897 | Email: <a href="mailto:bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
+    <li><strong>Marthernic Swartz (Sales Executive)</strong><br>Tel: 073 469 7077 | Cell: 060 492 5793 | Email: <a href="mailto:mswartz@bnamotors.co.za">mswartz@bnamotors.co.za</a></li>
+  </ul>
+</section>
+
+<script src="script.js"></script>
+
+<!-- Place this in your HTML where the cards should load -->
+<div id="bankRepoGrid" class="vehicle-grid"></div>
+<p id="statusMsg" style="text-align:center;color:orange;"></p>
+
+<!-- jQuery + Slick Carousel (Keep only if you're using Slick elsewhere) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("bankRepoGrid");
+  const pagination = document.getElementById("pagination");
+  const carsPerPage = 6;
+  let currentPage = 1;
+  let allCars = [];
+
+  fetch('bank-repo-cars.json')
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to fetch cars.");
+      return res.json();
+    })
+    .then(data => {
+      if (!Array.isArray(data)) throw new Error("Invalid JSON structure.");
+      allCars = data;
+      renderPage(currentPage);
+      renderPagination();
+      attachEnquireHandlers();
+    })
+    .catch(err => {
+      grid.innerHTML = `<p style="color:red;">❌ Failed to load cars: ${err.message}</p>`;
+      console.error(err);
+    });
+
+  function renderPage(page) {
+    grid.innerHTML = '';
+    const start = (page - 1) * carsPerPage;
+    const end = start + carsPerPage;
+    const pageCars = allCars.slice(start, end);
+
+    pageCars.forEach(car => {
+      const card = document.createElement('div');
+      card.className = 'vehicle-card';
+      card.innerHTML = `
+        <img src="${car.image}" alt="${car.title}" />
+        <div class="vehicle-info">
+          <h3>${car.title}</h3>
+          <p>${car.desc}</p>
+          <p class="price">${car.price}</p>
+          <button class="enquire-btn">ENQUIRE</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    attachEnquireHandlers(); // re-bind after rendering
+  }
+
+  function renderPagination() {
+    pagination.innerHTML = '';
+    const totalPages = Math.ceil(allCars.length / carsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      if (i === currentPage) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        currentPage = i;
+        renderPage(currentPage);
+        renderPagination();
+      });
+      pagination.appendChild(btn);
+    }
+
+    if (currentPage < totalPages) {
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = 'Next';
+      nextBtn.addEventListener('click', () => {
+        currentPage++;
+        renderPage(currentPage);
+        renderPagination();
+      });
+      pagination.appendChild(nextBtn);
+    }
+  }
+
+  function attachEnquireHandlers() {
+    document.querySelectorAll('.enquire-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.vehicle-card');
+        const title = card.querySelector('h3').textContent;
+        // Formspree version (recommended)
+        window.location.href = `enquire.html?vehicle=${encodeURIComponent(title)}`;
+        // Or open mail client:
+        // window.location.href = `mailto:andy@bnamotors.co.za?subject=Enquiry about ${encodeURIComponent(title)}&body=Hi, I'm interested in the ${encodeURIComponent(title)}. Please send more info.`;
+      });
+    });
+  }
+});
+</script>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/BNA_FOOTER_LOGO_V1.png" alt="BNA Motors" />
+    </div>
+    <div class="footer-info">
+      <ul>
+        <li><strong>Contact:</strong> 078 335 0897 / 087 510 0928</li>
+        <li><strong>Email:</strong> <a href="mailto: bnamotorssales@gmail.com">bnamotorssales@gmail.com</a></li>
+        <li><strong>Address:</strong> 255 Voortrekker Road, Goodwood; 374 Voortrekker Road, Parow; 402 Voortrekker Road, Parow, Cape Town, 7500</li>
+        <li><strong>Website:</strong> <a href="http://www.bnamotors.co.za" target="_blank">www.bnamotors.co.za</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/share/1Nx6f48hyD/" target="_blank">Facebook</a> |
+      <a href="#" target="_blank">Instagram</a> |
+      <a href="#" target="_blank">Twitter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 BNA Motors. All Rights Reserved.<a href="#"> Designed By Marketing ACE</a></p>
+  </div>
+</footer>
+
+<form id="enquiryForm" action="https://formspree.io/f/your_form_id" method="POST" style="display: none;">
+  <input type="hidden" name="vehicle" id="vehicleName">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your message" required></textarea>
+  <button type="submit">Send Enquiry</button>
+</form>
+
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27783350897?text=Hi%20BNA%20Motors,%20I'm%20interested%20in%20a%20vehicle."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+</body>
+</html>

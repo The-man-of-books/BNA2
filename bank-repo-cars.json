@@ -1,63 +1,20 @@
-
 [
   {
-    "title": "2017 Volkswagen Polo Vivo 1.4 Trendline",
-    "desc": "Manual | 134,000 km | Petrol",
-    "price": "R 139,995",
-    "image": "images/BNA9122-11.jpeg"
+    "title": "2013 TOYOTA",
+    "desc": "Fortuner 3.0D-4D Auto | Automatic | 134,000 km | Petrol",
+    "price": "R 56,995",
+    "image": "images/BNA9647-1.jpeg"
   },
   {
-    "title": "2018 Ford Ranger 2.2TDCi XL D/Cab",
-    "desc": "Manual | 110,000 km | Diesel",
-    "price": "R 289,995",
-    "image": "images/BNA9122-11.jpeg"
+    "title": "2021 Ford",
+    "desc": "Rander 2.2TDCi XLS Double Cab | Manual | 209,800 km | Petrol",
+    "price": "R 76,995",
+    "image": "images/BNA9717-1.jpeg"
   },
   {
-    "title": "2017 Volkswagen Polo Vivo 1.4 Trendline",
-    "desc": "Manual | 134,000 km | Petrol",
-    "price": "R 139,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2018 Ford Ranger 2.2TDCi XL D/Cab",
-    "desc": "Manual | 110,000 km | Diesel",
-    "price": "R 289,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2017 Volkswagen Polo Vivo 1.4 Trendline",
-    "desc": "Manual | 134,000 km | Petrol",
-    "price": "R 139,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2018 Ford Ranger 2.2TDCi XL D/Cab",
-    "desc": "Manual | 110,000 km | Diesel",
-    "price": "R 289,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2017 Volkswagen Polo Vivo 1.4 Trendline",
-    "desc": "Manual | 134,000 km | Petrol",
-    "price": "R 139,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2018 Ford Ranger 2.2TDCi XL D/Cab",
-    "desc": "Manual | 110,000 km | Diesel",
-    "price": "R 289,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2017 Volkswagen Polo Vivo 1.4 Trendline",
-    "desc": "Manual | 134,000 km | Petrol",
-    "price": "R 139,995",
-    "image": "images/BNA9122-11.jpeg"
-  },
-  {
-    "title": "2018 Ford Ranger 2.2TDCi XL D/Cab",
-    "desc": "Manual | 110,000 km | Diesel",
-    "price": "R 289,995",
-    "image": "images/BNA9122-11.jpeg"
+    "title": "2022 Cherry",
+    "desc": "Tiggo 4 Pro 1.5T Elite | Manual | 65,411 km | Diesel",
+    "price": "R 48,995",
+    "image": "images/BNA9670-1.jpeg"
   }
 ]
