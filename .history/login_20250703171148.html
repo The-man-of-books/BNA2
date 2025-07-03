@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BNA Admin Login</title>
+  <style>
+    body {
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<script>
+  if (localStorage.getItem("bna_logged_in") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body>
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <input type="password" id="password" placeholder="Enter admin password" />
+    <button onclick="login()">Login</button>
+    <div id="error" class="error" style="display: none;">Incorrect password</div>
+  </div>
+
+  <script>
+    function login() {
+      const entered = document.getElementById('password').value;
+      const correctPassword = "bna123"; // 🔒 Set your real password here
+
+      if (entered === correctPassword) {
+        localStorage.setItem("bna_logged_in", "true");
+        window.location.href = "upload.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+
+    // If already logged in, auto-redirect
+    if (localStorage.getItem("bna_logged_in") === "true") {
+      window.location.href = "upload.html";
+    }
+  </script>
+</body>
+</html>

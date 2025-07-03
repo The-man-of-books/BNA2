@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BNA Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bna-blue: #0146a6;
+      --bna-dark: #0d1b2a;
+      --bna-light: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bna-light);
+      color: #222;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background: var(--bna-blue);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .admin-form {
+      max-width: 600px;
+      background: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--bna-blue);
+    }
+
+    .admin-form input,
+    .admin-form textarea,
+    .admin-form button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .admin-form button {
+      background: var(--bna-blue);
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .admin-form button:hover {
+      background: #003d91;
+    }
+
+    #output {
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      white-space: pre-wrap;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>BNA Motors – Admin Car Uploader</header>
+
+  <div class="admin-form">
+    <h2>Add a New Car</h2>
+    <form id="carForm">
+      <input type="text" id="title" placeholder="Car Title" required />
+      <textarea id="desc" placeholder="Car Description" rows="3" required></textarea>
+      <input type="text" id="price" placeholder="Price (e.g. R 98,995)" required />
+      <input type="file" id="imageUpload" accept="image/*" required />
+      <button type="submit">Generate JSON</button>
+    </form>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("carForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value.trim();
+      const desc = document.getElementById("desc").value.trim();
+      const price = document.getElementById("price").value.trim();
+      const fileInput = document.getElementById("imageUpload");
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert("Please select an image file.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function() {
+        const fileName = file.name.split(/(\\|\/)/g).pop(); // extract just the filename
+        const car = {
+          title,
+          desc,
+          price,
+          image: "images/" + fileName
+        };
+
+        output.textContent = JSON.stringify(car, null, 2);
+        alert("✅ Car object generated. Upload image to /images/ and paste this into cars.json.");
+      };
+
+      reader.readAsDataURL(file); // This will also preview if needed
+    });
+  </script>
+</body>
+</html>

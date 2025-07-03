@@ -1,0 +1,44 @@
+[
+  {
+    "title": "2013 TOYOTA",
+    "desc": "Fortuner 3.0D-4D Auto | Automatic | 134,000 km | Petrol",
+    "price": "R 56,995",
+    "image": "images/BNA9647-1.jpeg"
+  },
+  {
+    "title": "2021 Ford",
+    "desc": "Rander 2.2TDCi XLS Double Cab | Manual | 209,800 km | Petrol",
+    "price": "R 76,995",
+    "image": "images/BNA9717-1.jpeg"
+  },
+  {
+    "title": "2019 Renualt",
+    "desc": "PKWID 1.0 Dynamique 5 Door | Trans manual | Mileage 89213 | T & C apply. Subject to availability. E&OE.",
+    "price": "R 96,995",
+    "image": "images/BNA8682-12.jpeg"
+  },
+  {
+    "title": "2016 Volkswagen",
+    "desc": "Polo Vivo 1.4 Eclipse 5 Door | Trans manual | Mileage 122319 | T & C apply. Subject to availability. E&OE.",
+    "price": "R 68,995",
+    "image": "images/BNA9771-1.jpeg"
+  },
+  {
+    "title": "2015 Volkswagen",
+    "desc": "Polo Vivo 1.4 comfortline 5 Door | Trans manual | Mileage 134000 | T & C apply. Subject to availability. E&OE.",
+    "price": "R 78,995",
+    "image": "images/BNA9183-9.jpeg"
+  },
+  {
+    "title": "2016 Volkswagen",
+    "desc": "Polo GP 1.2 TSI comfortline (66KW) | Trans manual | Mileage 134000 | T & C apply. Subject to availability. E&OE.",
+    "price": "R 78,995",
+    "image": "images/BNA9584-1.jpeg"
+  },
+  {
+    "title": "2022 Cherry",
+    "desc": "Tiggo 4 Pro 1.5T Elite | Manual | 65,411 km | Diesel",
+    "price": "R 48,995",
+    "image": "images/BNA9670-1.jpeg"
+  }
+]
