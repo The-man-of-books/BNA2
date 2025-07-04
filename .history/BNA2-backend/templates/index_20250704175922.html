@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to BNA2</h1>
+    <a href="/admin-login">Admin Login</a>
+</body>
+</html>
+
+
+# templates/login.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    <form method="POST" action="/admin-login">
+        <input type="password" name="pin" placeholder="Enter PIN" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

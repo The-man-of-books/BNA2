@@ -5,31 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-button-right');
     const prevButton = document.querySelector('.carousel-button-left');
-    
-    if (slides.length && nextButton && prevButton) {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      let currentIndex = 0;
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    let currentIndex = 0;
 
-      const updateCarousel = () => {
-        const offset = -slideWidth * currentIndex;
-        track.style.transform = `translateX(${offset}px)`;
-      };
+    const updateCarousel = () => {
+      const offset = -slideWidth * currentIndex;
+      track.style.transform = `translateX(${offset}px)`;
+    };
 
-      nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-      });
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
 
-      prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
-      });
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
 
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-      }, 5000);
-    }
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
   }
 
   // BANK REPO CARS GRID
@@ -73,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.appendChild(card);
       });
 
+      // Attach event listeners to new buttons
       grid.querySelectorAll('.enquire-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const card = btn.closest('.vehicle-card');
@@ -155,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mainCarGrid.appendChild(card);
       });
 
+      // Attach event listeners to new buttons
       mainCarGrid.querySelectorAll('.enquire-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const card = btn.closest('.vehicle-card');

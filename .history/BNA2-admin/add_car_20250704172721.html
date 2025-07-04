@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Car</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <h2>Add New Car</h2>
+  <form id="carForm">
+    <input type="text" placeholder="Car Name" id="carName" required><br><br>
+    <input type="text" placeholder="Price" id="price" required><br><br>
+    <input type="text" placeholder="Image URL" id="image" required><br><br>
+    <button type="submit">Add Car</button>
+  </form>
+
+  <script>
+    document.getElementById('carForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const car = {
+        name: document.getElementById('carName').value,
+        price: document.getElementById('price').value,
+        image: document.getElementById('image').value
+      };
+
+      const response = await fetch('http://localhost:5000/add-car', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(car)
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    });
+  </script>
+</body>
+</html>
